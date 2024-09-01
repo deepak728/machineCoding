@@ -1,0 +1,10 @@
+# Ignore Maven target directory
+ratelimiter/target/
+
+# Ignore IDE files
+.idea/
+*.iml
+
+# Ignore build artifacts
+*.class
+*.jar
