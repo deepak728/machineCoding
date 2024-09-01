@@ -1,3 +1,13 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# Ignore target directory (Maven output)
+/target/
+
+# Ignore compiled class files
+*.class
+
+# Ignore JAR files
+*.jar
+
+# Ignore Maven-specific files
+**/maven-status/
+**/maven-archiver/
+**/maven-site/
