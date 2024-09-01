@@ -1,5 +1,5 @@
 # Ignore target directory (Maven output)
-/target/
+target/
 
 # Ignore compiled class files
 *.class
@@ -7,6 +7,7 @@
 # Ignore JAR files
 *.jar
 
+.idea/
 # Ignore Maven-specific files
 **/maven-status/
 **/maven-archiver/

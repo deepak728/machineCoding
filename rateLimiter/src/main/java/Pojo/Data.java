@@ -1,6 +1,9 @@
 package Pojo;
 
 import java.time.Instant;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Objects;
 import java.util.TimeZone;
 
 
@@ -13,11 +16,14 @@ public class Data {
     int windowInSec;
      Instant lastTime;
 
-    public Data(int counter, int maxCounter,int window,Instant time){
+     Deque<Object> queue;
+
+    public Data(int counter, int maxCounter,int window,Instant time, Deque<Object> queue){
         this.counter = counter;
         this.maxCounter = maxCounter;
         this.windowInSec = window;
         this.lastTime= time;
+        this.queue = queue;
     }
 
     public int getCounter() {
@@ -50,5 +56,13 @@ public class Data {
 
     public void setLastTime(Instant lastTime) {
         this.lastTime = lastTime;
+    }
+
+    public Deque<Object> getQueue() {
+        return queue;
+    }
+
+    public void setQueue(Deque<Object> queue) {
+        this.queue = queue;
     }
 }

@@ -11,6 +11,8 @@ public class APIGateway {
 
     public void init(){
         objectMap.put("tokenBucket", TokenBucket.getInstance());
+        objectMap.put("leakyBucket",LeakyBucket.getInstance());
+        objectMap.put("fixedWindow", FixedWindow.getInstance());
     }
     public void makeRequest(UserRequest userRequest){
         if(!objectMap.containsKey(userRequest.getRateLimiter())) return;

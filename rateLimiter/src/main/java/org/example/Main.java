@@ -28,6 +28,27 @@ public class Main {
             }
         }
 
+        System.out.println();
+        System.out.println("LeakyBucket");
+
+        for(int i=0;i<10;i++){
+            apiGateway.makeRequest(new UserRequest("devesh","leakyBucket",i,3));
+            if(i%5==0){
+                sleep(5);
+            }
+        }
+
+        System.out.println();
+        System.out.println("FixedWindow");
+
+        for(int i=1;i<=10;i++){
+            apiGateway.makeRequest(new UserRequest("devesh","fixedWindow",i,3));
+            if(i%5==0){
+                sleep(5);
+            }
+        }
+
+
     }
 
     public static void sleep(int sec){

@@ -28,7 +28,7 @@ public class TokenBucket implements RateLimiter{
         String user = userRequest.getUser();
 
         if(!userDataMap.containsKey(user)){
-            userDataMap.put(user,new Data(userRequest.getMaxAllowedReq(), userRequest.getMaxAllowedReq(), 5,Instant.now()));
+            userDataMap.put(user,new Data(userRequest.getMaxAllowedReq(), userRequest.getMaxAllowedReq(), 5,Instant.now(),null));
         }
 
         Data userData = userDataMap.get(user);
