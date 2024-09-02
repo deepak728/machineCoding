@@ -16,9 +16,9 @@ public class Data {
     int windowInSec;
      Instant lastTime;
 
-     Deque<Object> queue;
+     Deque<UserRequest> queue;
 
-    public Data(int counter, int maxCounter,int window,Instant time, Deque<Object> queue){
+    public Data(int counter, int maxCounter,int window,Instant time, Deque<UserRequest> queue){
         this.counter = counter;
         this.maxCounter = maxCounter;
         this.windowInSec = window;
@@ -58,11 +58,11 @@ public class Data {
         this.lastTime = lastTime;
     }
 
-    public Deque<Object> getQueue() {
+    public Deque<UserRequest> getQueue() {
         return queue;
     }
 
-    public void setQueue(Deque<Object> queue) {
+    public void setQueue(Deque<UserRequest> queue) {
         this.queue = queue;
     }
 }

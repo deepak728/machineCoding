@@ -24,7 +24,8 @@ public class LeakyBucket implements RateLimiter{
 
     private Data pullData(UserRequest userRequest, Instant time){
         if(!userDataMap.containsKey(userRequest.getUser())){
-            userDataMap.put(userRequest.getUser(),new Data(0,userRequest.getMaxAllowedReq(), 7, Instant.now(), new ArrayDeque<Object>()));
+            userDataMap.put(userRequest.getUser(),
+                    new Data(0,userRequest.getMaxAllowedReq(), 7, Instant.now(), new ArrayDeque<UserRequest>()));
         }
 
         return userDataMap.get(userRequest.getUser());
@@ -40,7 +41,7 @@ public class LeakyBucket implements RateLimiter{
             return false;
         }else{
             System.out.println("Request "+userRequest.getUuid()+" is allowed for user "+user);
-            data.getQueue().add(Integer.valueOf(userRequest.getUuid()));
+            data.getQueue().add(userRequest);
             return false;
         }
     }

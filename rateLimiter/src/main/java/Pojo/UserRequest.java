@@ -12,6 +12,16 @@ public class UserRequest {
 
     int maxAllowedReq;
 
+    Instant currTime;
+
+    public UserRequest(String user, String rateLimiter,int uuid,int maxAllowedReq, Instant instant) {
+        this.user = user;
+        this.rateLimiter = rateLimiter;
+        this.uuid = uuid;
+        this.maxAllowedReq = maxAllowedReq;
+        this.currTime = instant;
+    }
+
     public UserRequest(String user, String rateLimiter,int uuid,int maxAllowedReq) {
         this.user = user;
         this.rateLimiter = rateLimiter;
@@ -49,5 +59,13 @@ public class UserRequest {
 
     public void setMaxAllowedReq(int maxAllowedReq) {
         this.maxAllowedReq = maxAllowedReq;
+    }
+
+    public Instant getCurrTime() {
+        return currTime;
+    }
+
+    public void setCurrTime(Instant currTime) {
+        this.currTime = currTime;
     }
 }

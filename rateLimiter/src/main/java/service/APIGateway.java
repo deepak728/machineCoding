@@ -13,12 +13,13 @@ public class APIGateway {
         objectMap.put("tokenBucket", TokenBucket.getInstance());
         objectMap.put("leakyBucket",LeakyBucket.getInstance());
         objectMap.put("fixedWindow", FixedWindow.getInstance());
+        objectMap.put("slidingWindowLog", SlidingWindowLog.getInstance());
     }
     public void makeRequest(UserRequest userRequest){
         if(!objectMap.containsKey(userRequest.getRateLimiter())) return;
         RateLimiter rateLimiter = objectMap.get(userRequest.getRateLimiter());
 
         rateLimiter.checkRateLimit(userRequest);
-        //System.out.println();
+        //System.out.println("GOt iot");
     }
 }
