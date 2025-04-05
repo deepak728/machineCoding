@@ -1,6 +1,6 @@
 Parking Lot: 
 
-**Requirements : **
+**Requirements :** 
 
 - There is a parking lot with address and all.
 - There will be multiple entries/exit.
@@ -38,7 +38,7 @@ System :
 - accept payment.
 
 
-**Improvements in code :: **
+**Improvements and extension :** 
 - Make code thread safe in case there are multiple servers. 
 - Implement Vehicle and ParkingSpot factory. 
 - Use builder pattern for Ticket class 
