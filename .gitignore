@@ -8,3 +8,6 @@ ratelimiter/target/
 # Ignore build artifacts
 *.class
 *.jar
+.DS_Store
+./DS_Store
+

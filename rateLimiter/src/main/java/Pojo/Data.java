@@ -7,23 +7,32 @@ import java.util.Objects;
 import java.util.TimeZone;
 
 
-public class Data {
-
+public class Data<T> {
 
     int counter;
     int maxCounter;
 
     int windowInSec;
-     Instant lastTime;
+    Instant lastTime;
+    int lastCounter;
 
-     Deque<UserRequest> queue;
+     Deque<T> queue;
 
-    public Data(int counter, int maxCounter,int window,Instant time, Deque<UserRequest> queue){
+    public Data(int counter, int maxCounter,int window,Instant time, Deque<T> queue){
         this.counter = counter;
         this.maxCounter = maxCounter;
         this.windowInSec = window;
         this.lastTime= time;
         this.queue = queue;
+    }
+
+    public Data(int counter, int maxCounter,int window,Instant time, Deque<T> queue, int lastCounter){
+        this.counter = counter;
+        this.maxCounter = maxCounter;
+        this.windowInSec = window;
+        this.lastTime= time;
+        this.queue = queue;
+        this.lastCounter= lastCounter;
     }
 
     public int getCounter() {
@@ -58,11 +67,19 @@ public class Data {
         this.lastTime = lastTime;
     }
 
-    public Deque<UserRequest> getQueue() {
+    public Deque<T> getQueue() {
         return queue;
     }
 
-    public void setQueue(Deque<UserRequest> queue) {
+    public void setQueue(Deque<T> queue) {
         this.queue = queue;
+    }
+
+    public int getLastCounter() {
+        return lastCounter;
+    }
+
+    public void setLastCounter(int lastCounter) {
+        this.lastCounter = lastCounter;
     }
 }
