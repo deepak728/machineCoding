@@ -5,8 +5,9 @@ import model.*;
 import java.util.*;
 
 public class ParkingLot {
-
+    // make this thread safe. 
     private  static  ParkingLot instance = null;
+    // Implement priority queue for closest parking spot availability
     private Map<SpotType, List<ParkingSpot>> availableVehicle;
     private Map<SpotType, List<ParkingSpot>> occupiedParkingSpot;
 
@@ -17,6 +18,7 @@ public class ParkingLot {
         List<ParkingSpot> small = new ArrayList<>();
 
         for(int i=0;i<1;i++){
+            // Create Parking spot factory using factory design pattern. 
             big.add(new BigParkingSpot(i,0,SpotType.BIG,null));
         }
 
