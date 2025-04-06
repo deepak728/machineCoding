@@ -1,0 +1,5 @@
+package model;
+
+public enum GAME_STATE {
+    CREATED,STARTED,WHITE_WON,BLACK_WON,STALEMATE,QUIT,END
+}
